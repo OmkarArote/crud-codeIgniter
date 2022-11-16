@@ -5,7 +5,11 @@ class User extends CI_controller{
         $users = $this->User_model->all();
         $data = array();
         $data["users"] = $users;
+        $data['title'] = "List Users";
+        $this->load->view('include_files/header', $data);
+        $this->load->view('include_files/navbar');
         $this->load->view('list', $data);
+        $this->load->view('include_files/footer');
     }
 
     function create(){
@@ -13,7 +17,11 @@ class User extends CI_controller{
         $this->form_validation->set_rules('name','Name','required');
         $this->form_validation->set_rules('email','Email','required|valid_email');
         if($this->form_validation->run() == false){
+            $data['title'] = "Create User";
+            $this->load->view('include_files/header', $data);
+            $this->load->view('include_files/navbar');
             $this->load->view('create');
+            $this->load->view('include_files/footer');
         } else {
             $formArray = array();
             $formArray['name'] = $this->input->post('name');
@@ -33,7 +41,11 @@ class User extends CI_controller{
         $this->form_validation->set_rules('name','Name','required');
         $this->form_validation->set_rules('email','Email','required|valid_email');
         if($this->form_validation->run() == false){
+            $data['title'] = "Edit User";
+            $this->load->view('include_files/header', $data);
+            $this->load->view('include_files/navbar');
             $this->load->view('edit', $data);
+            $this->load->view('include_files/footer');
         } else {
             $formArray = array();
             $formArray['name'] = $this->input->post('name');
