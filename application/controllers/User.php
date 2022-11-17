@@ -67,5 +67,4 @@ class User extends CI_controller{
         $this->session->set_flashdata('warning', 'User Deleted!');
         redirect(base_url().'index.php/user/index');
     }
-} 
-?>
+}

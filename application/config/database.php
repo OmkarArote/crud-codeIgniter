@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3306',
+	'hostname' => 'localhost:3308',
 	'username' => 'root',
 	'password' => 'Omkar@2001',
 	'database' => 'codei_crud',
